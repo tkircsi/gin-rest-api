@@ -1,0 +1,14 @@
+version: '2.4'
+services:
+  database:
+    image: postgres:12.4
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_PASSWORD: pgpass
+      POSTGRES_USER: pguser
+      POSTGRES_DB: books
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+volumes:
+  database-data:
